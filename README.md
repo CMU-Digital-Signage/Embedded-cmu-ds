@@ -6,6 +6,7 @@ CPE Digital Signage is ?
 Install using Raspberry Pi [Imager](https://www.raspberrypi.com/software/)
 > [!NOTE]
 > Please remember the username and hostname for SSH.
+>
 > ![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751135/801dfcec-06a8-4b69-9ee3-dd58568e6fd7)
 
 ## Remote to Raspberry Pi
