@@ -6,7 +6,7 @@ path = "/etc/xdg/lxsession/LXDE-pi/autostart"
 
 textDefault = '@lxpanel --profile LXDE-pi\n' + '@pcmanfm --desktop --profile LXDE-pi\n' + '@xscreensaver -no-splash\n' 
 
-web = f'https://cmu-ds.onrender.com/device/{mac}'
+web = f'https://signage.se.cpe.eng.cmu.ac.th/device/{mac}'
 runWeb = '@xset s off\n' + '@xset -dpms\n' + '@xset s noblank\n' + f'@chromium-browser --kiosk {web}\n'
 hideCursor = '@unclutter -idle 0.1 -root\n'
 
