@@ -58,8 +58,8 @@ sudo nano /etc/dphys-swapfile
 ```
 _Change_ `CONF_SWAPSIZE`
 ```
-#CONF_SWAPSIZE = 100
-CONF_SWAPSIZE = 2048
+#CONF_SWAPSIZE=100
+CONF_SWAPSIZE=2048
 ```
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 ```
