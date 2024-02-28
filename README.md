@@ -48,6 +48,8 @@ echo Running at boot
 sudo rm -r  ~/.cache/chromium/Default/Cache/*
 sudo python ~/Embedded-cmu-ds/sendmac.py
 ```
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751135/801dfcec-06a8-4b69-9ee3-dd58568e6fd7)
+```
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 **Increasing the size of the swap file.([link](https://youtu.be/NyGeUwIeH-s?si=UfU7Ykd6CQcibb4Q))**
 ```
