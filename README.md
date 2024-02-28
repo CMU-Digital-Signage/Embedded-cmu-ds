@@ -42,7 +42,7 @@ sudo python ~/Embedded-cmu-ds/setStart.py
 ```
 sudo nano ~/.bashrc
 ```
-_Then enter the following to `.bashrc` file._
+_Then enter the following to the bottom of `.bashrc` file._
 ```
 echo Running at boot
 sudo rm -r  ~/.cache/chromium/Default/Cache/*
@@ -62,6 +62,8 @@ _Change_ `CONF_SWAPSIZE`
 ```
 #CONF_SWAPSIZE=100
 CONF_SWAPSIZE=2048
+```
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751501/fe779abf-258b-44e7-831a-a20fbe836f54)
 ```
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 ```
@@ -106,6 +108,8 @@ _Uncomment the following lines and correct the pin number. The default values be
 #dtoverlay=gpio-ir-tx,gpio_pin=18
 dtoverlay=gpio-ir-tx,gpio_pin=17
 ```
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751501/23a3cafe-5093-4ed6-bb7d-ae16eed55136)
+```
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 
 **LIRC Module Hardware Configuration**
@@ -122,6 +126,8 @@ DRIVER="default"
 DEVICE="/dev/lirc0"
 MODULES="lirc_rpi"
 ```
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751501/f1785f30-d5c9-4acc-bdab-88c7ef5070de)
+```
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 
 **LIRC Module Options Configuration**
@@ -136,6 +142,8 @@ _Change both_ `driver` _and_ `device` _values (line #3-4)._
 #device          = auto
 driver          = default
 device          = /dev/lirc0
+```
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751501/bee1daf6-8fca-4327-8a6c-c30df6eebacc)
 ```
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 
@@ -165,9 +173,11 @@ sudo cp ~/Embedded-cmu-ds/AKB74475403.lircd.conf /etc/lirc/lircd.conf.d/LG.lircd
 ```
 sudo nano ~/.bashrc
 ```
-_Then enter the following to `.bashrc` file._
+_Then enter the following to the bottom of `.bashrc` file._
 ```
 sudo python ~/Embedded-cmu-ds/mqtt.py
+```
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751501/bc90a2ce-ad54-4a4a-bf79-379ce2b97ee6)
 ```
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 
