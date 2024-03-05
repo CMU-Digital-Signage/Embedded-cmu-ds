@@ -9,6 +9,9 @@ import os
 
 from gpiozero import LightSensor, Buzzer
 
+BUZZER = 18 #GPIO BUZZER
+ldr = LightSensor(22) #GPIO LIGHT SENSOR
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(BUZZER, GPIO.OUT)
@@ -19,8 +22,7 @@ emgc = 0
 
 on_off = True
 
-BUZZER = 18 #GPIO BUZZER
-ldr = LightSensor(27) #GPIO LIGHT SENSOR
+
 
 def buzz(noteFreq, duration):
     halveWaveTime = 1 / (noteFreq * 2 )
@@ -55,13 +57,11 @@ def on_message(client, userdata, msg):
     global emgc,ldr,on_off
     print(msg.topic + " " + 'message =>' + " " + str(msg.payload))
     if "Not EMGC" in str(msg.payload):
-        if mac in str(msg.payload):
-            print("Not EMGC")
-            emgc = 0
+        print("Not EMGC")
+        emgc = 0
     elif "EMGC" in str(msg.payload):
-        if mac in str(msg.payload):
-            print("EMGC")
-            emgc = 1
+        print("EMGC")
+        emgc = 1
     else:
         if mac in str(msg.payload):
             if ldr.value > 0.7:
