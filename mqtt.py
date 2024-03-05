@@ -1,19 +1,26 @@
 import paho.mqtt.client as paho
 import RPi.GPIO as GPIO
 from paho import mqtt
+import threading
+import requests
 import getmac
 import time
 import os
-import threading
+
+from gpiozero import LightSensor, Buzzer
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-BUZZER = 18
 GPIO.setup(BUZZER, GPIO.OUT)
 
 mac = getmac.get_mac_address("eth0")
 
 emgc = 0
+
+on_off = True
+
+BUZZER = 18 #GPIO BUZZER
+ldr = LightSensor(27) #GPIO LIGHT SENSOR
 
 def buzz(noteFreq, duration):
     halveWaveTime = 1 / (noteFreq * 2 )
@@ -45,7 +52,7 @@ def on_subscribe(client, userdata, mid, granted_qos, properties=None):
 
 # print message, useful for checking if it was successful
 def on_message(client, userdata, msg):
-    global emgc
+    global emgc,ldr,on_off
     print(msg.topic + " " + 'message =>' + " " + str(msg.payload))
     if "Not EMGC" in str(msg.payload):
         if mac in str(msg.payload):
@@ -57,14 +64,29 @@ def on_message(client, userdata, msg):
             emgc = 1
     else:
         if mac in str(msg.payload):
+            if ldr.value > 0.7:
+                on_off = True
+                print(on_off)
+            elif ldr.value < 0.2:
+                on_off = False
+                print(on_off)
             print("Remote")
             os.system("irsend SEND_ONCE LG KEY_POWER")
+            time.sleep(5)
+            if ((ldr.value > 0.7) and ~on_off):
+                r = requests.post('https://signage.se.cpe.eng.cmu.ac.th/api/v1/pi/status',params={'mac': mac,'status':True})
+                client.publish("pi/on_off", payload="on", qos=0)
+                on_off = True
+            elif ((ldr.value < 0.2) and on_off):
+                r = requests.post('https://signage.se.cpe.eng.cmu.ac.th/api/v1/pi/status',params={'mac': mac,'status':False})
+                client.publish("pi/on_off", payload="off", qos=0)
+                on_off = False
 
-def check_emgc():
+def check():
     while True:
         if emgc == 1:
-            play()
-        time.sleep(1)  # Adjust sleep time as needed
+            play()  # Adjust sleep time as needed
+        time.sleep(1)
 
 # using MQTT version 5 here, for 3.1.1: MQTTv311, 3.1: MQTTv31
 # userdata is user defined data of any type, updated by user_data_set()
@@ -101,4 +123,4 @@ client_thread.daemon = True
 client_thread.start()
 
 # Run emgc check in the main thread
-check_emgc()
+check()
