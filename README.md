@@ -2,6 +2,9 @@
 logo
 ## About CPE Digital Signage
 CPE Digital Signage is ?
+## Schematic diagram of module connection
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751135/3e76e572-853a-4f13-a013-b893e3a2128d)
+
 ## Installing on Raspberry Pi OS (Legacy,64-bit)
 Install using Raspberry Pi [Imager](https://www.raspberrypi.com/software/)
 > [!NOTE]
