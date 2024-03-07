@@ -1,7 +1,4 @@
 # CPE Digital Signage
-logo
-## About CPE Digital Signage
-CPE Digital Signage is ?
 ## Schematic diagram of module connection
 ![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751135/3e76e572-853a-4f13-a013-b893e3a2128d)
 
@@ -10,7 +7,10 @@ Install using Raspberry Pi [Imager](https://www.raspberrypi.com/software/)
 > [!NOTE]
 > Please remember the username and hostname for SSH.
 >
-> ![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751135/801dfcec-06a8-4b69-9ee3-dd58568e6fd7)
+> ![Screenshot 2024-03-06 150844](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751135/d5892a2c-4c19-4e61-b142-5f2bafc032ef)
+>
+> In the `configure wireless LAN` section, you can set it to your network or use `JumboPlusIoT` ([details](https://network.cmu.ac.th/wiki/index.php/JumboPlusIoT)).
+
 
 ## Remote to Raspberry Pi
 Use lan cable connect to Raspberry Pi and use [Putty](https://putty.org/) for SSH to Raspberry Pi using HostName(IP address) is
