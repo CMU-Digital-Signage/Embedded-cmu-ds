@@ -49,6 +49,7 @@ _Then enter the following to the bottom of `.bashrc` file._
 ```
 echo Running at boot
 sudo rm -r  ~/.cache/chromium/Default/Cache/*
+sudo python ~/Embedded-cmu-ds/setStart.py
 sudo python ~/Embedded-cmu-ds/sendmac.py
 ```
 ![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751501/a16a55de-5f33-435e-8de7-74a8b902a2b1)
