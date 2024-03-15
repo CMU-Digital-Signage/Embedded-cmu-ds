@@ -52,7 +52,7 @@ sudo rm -r  ~/.cache/chromium/Default/Cache/*
 sudo python ~/Embedded-cmu-ds/setStart.py
 sudo python ~/Embedded-cmu-ds/sendmac.py
 ```
-![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751501/a16a55de-5f33-435e-8de7-74a8b902a2b1)
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751135/2cb98451-b110-4f69-8f42-dfb31b8f69c6)
 
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 **Increasing the size of the swap file.([link](https://youtu.be/NyGeUwIeH-s?si=UfU7Ykd6CQcibb4Q))**
@@ -181,7 +181,7 @@ _Then enter the following to the bottom of `.bashrc` file._
 ```
 sudo python ~/Embedded-cmu-ds/mqtt.py
 ```
-![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751501/bc90a2ce-ad54-4a4a-bf79-379ce2b97ee6)
+![image](https://github.com/CMU-Digital-Signage/Embedded-cmu-ds/assets/90751135/f29d0760-2c39-4149-97a6-b3e661305271)
 
 `Ctrl + O` _save file and_ `Ctrl + x` _Exit file._
 
